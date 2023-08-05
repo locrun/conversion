@@ -10,7 +10,7 @@ git clone https://github.com/locrun/conversion.git
 Введите команду, что бы перейти в папку modules:
 
 ```
-cd modules
+cd views
 ```
 
 
