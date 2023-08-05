@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Distance Converter</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Конвертер расстояний</h1>
+      <form id="conversion-form">
+        <label for="distance-value">Расстояние:</label>
+        <input
+          type="number"
+          id="distance-value"
+          step="any"
+          name="distance-value"
+        />
+        <select id="distance-unit" name="distance-unit">
+          <option value="m">метры</option>
+          <option value="cm">сантиметры</option>
+          <option value="in">дюймы</option>
+          <option value="ft">футы</option>
+        </select>
+
+        <label for="convert-to">Конвертировать в:</label>
+        <select id="convert-to" name="convert-to">
+          <option value="m">метры</option>
+          <option value="cm">сантиметры</option>
+          <option value="in">дюймы</option>
+          <option value="ft">футы</option>
+        </select>
+
+        <button type="submit">Конвертировать</button>
+      </form>
+      <h3 id="result">Результат:</h3>
+    </div>
+    <script type="module" src="./views/displayLayout.js"></script>
+  </body>
+</html>

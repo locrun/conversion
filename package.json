@@ -1,0 +1,11 @@
+{
+  "name": "conversion",
+  "version": "1.0.0",
+  "main": "conversion.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
