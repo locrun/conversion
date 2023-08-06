@@ -1,9 +1,11 @@
-import conversionTable from "../data/conversionTable.json" assert { type: "json" }
+import conversionRules from "../data/conversionRules.json" assert { type: "json" }
 
 const errorHandling = (distance, convertTo) => {
   // Проверяем, что бы единицы измерения были разными
   if (distance.unit === convertTo) {
-    alert(`Нельзя выбрать ${distance.unit} и ${convertTo} для конвертации`)
+    throw new Error(
+      `Нельзя выбрать ${distance.unit} и ${convertTo} для конвертации`
+    )
   }
 
   // Проверяем, что бы введенное значение было больше 0
@@ -12,7 +14,7 @@ const errorHandling = (distance, convertTo) => {
   }
 
   // Проверяем, что единица измерения находится в списке поддерживаемых единиц
-  if (!conversionTable[distance.unit]) {
+  if (!conversionRules[distance.unit]) {
     throw new Error(`Единица измерения "${distance.unit}" не поддерживается`)
   }
 
