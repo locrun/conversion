@@ -6,11 +6,6 @@ const errorHandling = (distance, convertTo) => {
     alert(`Нельзя выбрать ${distance.unit} и ${convertTo} для конвертации`)
   }
 
-  // Проверяем, что значение расстояния является числом
-  if (typeof distance.value !== "number" || isNaN(distance.value)) {
-    throw new Error("Значение расстояния должно быть числом")
-  }
-
   // Проверяем, что бы введенное значение было больше 0
   if (distance.value <= 0) {
     throw new Error("Значение должно быть больше 0")
@@ -21,19 +16,6 @@ const errorHandling = (distance, convertTo) => {
     throw new Error(`Единица измерения "${distance.unit}" не поддерживается`)
   }
 
-  const conversionFactor = conversionTable[distance.unit][convertTo]
-
-  // // Проверяем, что коэффициент конвертации является числом
-  if (typeof conversionFactor !== "number" || isNaN(conversionFactor)) {
-    throw new Error(`Невозможно выполнить конвертацию в "${convertTo}"`)
-  }
-
-  const conversValue = distance.value * conversionFactor
-
-  // Проверяем, что результат конвертации является числом
-  if (isNaN(conversValue)) {
-    throw new Error(`Невозможно выполнить конвертацию в "${convertTo}"`)
-  }
   return true
 }
 export default errorHandling
